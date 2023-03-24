@@ -15,7 +15,8 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+"""Se cambiaron los números por emojis, de esa forma es algo más visual y facilita la memoria"""
+tiles = ["🍏", "🍎", "🥪", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍈", "🍒", "🫐", "🍑", "🥭", "🍍", "🥥", "🥝", "🍅", "🥑", "🍯", "🍆", "🍟", "🍣", "🥒", "🥨", "🥦", "🧁", "🧀", "🌽", "🥕", "🍭", "🍪" ] * 2
 state = {'mark': None}
 hide = [True] * 64
 
