@@ -93,7 +93,7 @@ def draw():
     """Texto ganaste"""
     if win == 32:
      up()
-     goto(-150,150)
+     goto(-185,120)
      color('green')
      write('GANASTE',align = 'center', font=('Arial',30, 'normal'))
 
