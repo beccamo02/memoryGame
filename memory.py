@@ -20,7 +20,8 @@ car = path('car.gif')
 tiles = [" 🍏 ", " 🍎 ", " 🥪 ", " 🍊 ", " 🍋 ", " 🍌 ", " 🍉 ", " 🍇 ", " 🍓 ", " 🍈 ", " 🍒 ", " 🫐 ", " 🍑 ", " 🥭 ", " 🍍 ", " 🥥 ", " 🥝 ", " 🍅 ", " 🥑 ", " 🍯 ", " 🍆 ", " 🍟 ", " 🍣 ", " 🥒 ", " 🥨 ", " 🥦 ", " 🧁 ", " 🧀 ", " 🌽 ", " 🥕 ", " 🍭 ", " 🍪 "] * 2
 state = {'mark': None}
 hide = [True] * 64
-
+taps = 0
+win = 0
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -47,6 +48,8 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global taps 
+    global win
     spot = index(x, y)
     mark = state['mark']
 
@@ -55,8 +58,11 @@ def tap(x, y):
     else:
         hide[spot] = False
         hide[mark] = False
-        state['mark'] = None
-
+        state['mark'] = None 
+        win = win + 1
+    """Contar y desplegar número de taps"""    
+    taps = taps + 1 
+    
 
 def draw():
     """Draw image and tiles."""
@@ -77,10 +83,22 @@ def draw():
         up()
         goto(x + 2, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark],font=('Arial',30, 'normal'))
+    
+    """Show taps"""
+    up()
+    goto(-200,180)
+    write(taps, align = 'left', font=('Arial',20, 'normal'))
 
-    update()
-    ontimer(draw, 100)
+    """Texto ganaste"""
+    if win == 32:
+     up()
+     goto(-150,150)
+     color('green')
+     write('GANASTE',align = 'center', font=('Arial',30, 'normal'))
+
+    up()
+    ontimer(draw, 100) 
 
 
 shuffle(tiles)
