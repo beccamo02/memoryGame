@@ -16,7 +16,8 @@ from freegames import path
 
 car = path('car.gif')
 """Se cambiaron los números por emojis, de esa forma es algo más visual y facilita la memoria"""
-tiles = ["🍏", "🍎", "🥪", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍈", "🍒", "🫐", "🍑", "🥭", "🍍", "🥥", "🥝", "🍅", "🥑", "🍯", "🍆", "🍟", "🍣", "🥒", "🥨", "🥦", "🧁", "🧀", "🌽", "🥕", "🍭", "🍪" ] * 2
+"""Se centró el emoji en el cuadro mediante espacios añadidos"""
+tiles = [" 🍏 ", " 🍎 ", " 🥪 ", " 🍊 ", " 🍋 ", " 🍌 ", " 🍉 ", " 🍇 ", " 🍓 ", " 🍈 ", " 🍒 ", " 🫐 ", " 🍑 ", " 🥭 ", " 🍍 ", " 🥥 ", " 🥝 ", " 🍅 ", " 🥑 ", " 🍯 ", " 🍆 ", " 🍟 ", " 🍣 ", " 🥒 ", " 🥨 ", " 🥦 ", " 🧁 ", " 🧀 ", " 🌽 ", " 🥕 ", " 🍭 ", " 🍪 "] * 2
 state = {'mark': None}
 hide = [True] * 64
 
